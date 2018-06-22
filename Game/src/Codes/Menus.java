@@ -1,4 +1,4 @@
-package Interfaces;
+package Codes;
 
 import java.lang.reflect.GenericArrayType;
 import Classes.Mago;
