@@ -2,20 +2,24 @@ package States;
 
 import java.awt.Graphics;
 
-import grafichs.Assets;
+import Entitys.Players;
+import backEnd_game.Game;
 
 public class GameState extends State {
 	
-	public GameState() {
-		
+	private Players player;
+	
+	public GameState(Game game) {
+		super(game);
+		player = new Players(480, 600);
 	}
 	
 	public void tick() {
-		
+		player.tick();
 	}
 	
 	public void render(Graphics g) {
-		g.drawImage(Assets.dirt,0,0,null);
+		player.render(g);
 	}
 
 }

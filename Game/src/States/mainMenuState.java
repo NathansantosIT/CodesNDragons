@@ -2,11 +2,13 @@ package States;
 
 import java.awt.Graphics;
 
+import backEnd_game.Game;
 import grafichs.Assets;
 
 public class mainMenuState extends State {
 
-	public mainMenuState() {
+	public mainMenuState(Game game) {
+		super(game);
 		
 	}
 	

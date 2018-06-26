@@ -3,12 +3,13 @@ package backEnd_game;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
+import Inputs.KeyManager;
 import States.GameState;
 import States.State;
 import States.mainMenuState;
 import grafichs.Assets;
 
-public class Joguin implements Runnable {
+public class Game implements Runnable {
 	
 	private Display display;
 	public int width, height;
@@ -24,7 +25,10 @@ public class Joguin implements Runnable {
 	private State gameState;
 	private State mainMenuState;
 	
-	public Joguin(String title, int width, int height) {
+	//Input
+	private KeyManager keyManager;
+	
+	public Game(String title, int width, int height) {
 		this.width = width;
 		this.height = height;
 		this.title = title;
@@ -33,10 +37,11 @@ public class Joguin implements Runnable {
 	//inicializa os Buffers, roda no começo do run()
 	private void init() {
 		display = new Display(title, width, height);
+		display.getFrame().addKeyListener(keyManager);
 		Assets.init();
 		
-		mainMenuState = new mainMenuState();
-		gameState = new GameState();
+		mainMenuState = new mainMenuState(this);
+		gameState = new GameState(this);
 		State.setState(gameState);
 	}
 	
@@ -92,7 +97,7 @@ public class Joguin implements Runnable {
 			}
 			
 			if(timer >= 1000000000) {
-				System.out.println("Ticks and Frames: " + ticks);
+				//System.out.println("Ticks and Frames: " + ticks);
 				ticks = 0;
 				timer = 0;
 			}

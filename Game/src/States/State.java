@@ -2,6 +2,8 @@ package States;
 
 import java.awt.Graphics;
 
+import backEnd_game.Game;
+
 public abstract class State {
 	
 	private static State currentState = null;
@@ -17,6 +19,12 @@ public abstract class State {
 	
 	
 	//CLASS
+	protected Game game;
+	
+	public State(Game game) {
+		this.game = game;
+	}
+	
 	public abstract void tick();
 	
 	public abstract void render(Graphics g);
