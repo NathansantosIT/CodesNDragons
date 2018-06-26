@@ -1,13 +1,12 @@
 package backEnd_game;
 
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
-import java.awt.image.BufferedImage;
 
+import States.GameState;
+import States.State;
+import States.mainMenuState;
 import grafichs.Assets;
-import grafichs.ImageLoader;
-import grafichs.spriteSheet;
 
 public class Joguin implements Runnable {
 	
@@ -21,7 +20,9 @@ public class Joguin implements Runnable {
 	private BufferStrategy bs;
 	private Graphics g;
 	
-	int x;
+	//States
+	private State gameState;
+	private State mainMenuState;
 	
 	public Joguin(String title, int width, int height) {
 		this.width = width;
@@ -33,10 +34,15 @@ public class Joguin implements Runnable {
 	private void init() {
 		display = new Display(title, width, height);
 		Assets.init();
+		
+		mainMenuState = new mainMenuState();
+		gameState = new GameState();
+		State.setState(gameState);
 	}
 	
 	private void tick() {
-		
+		if(State.getState() != null)
+			State.getState().tick();
 	}
 	
 	private void render() {
@@ -50,8 +56,8 @@ public class Joguin implements Runnable {
 		g.clearRect(0, 0, width, height);
 		////////Começa a desenhar aqui///////////
 		
-		g.drawImage(Assets.dirt, x, 10, null);
-		x += 1;
+		if(State.getState() != null)
+			State.getState().render(g);
 		
 		//////////////Termina aqui///////////////	
 		bs.show();

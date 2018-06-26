@@ -1,6 +1,6 @@
 package Classes;
-import Codes.Jogadores;
-public class Druida extends Jogadores{
+import Entitys.Players;
+public class Druida extends Players{
 	public void mostrarAtaques(String spec) {
 		switch(spec) {
 			case "Lua":

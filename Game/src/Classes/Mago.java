@@ -1,9 +1,9 @@
 package Classes;
 import java.util.Scanner;
 
-import Codes.Jogadores;
+import Entitys.Players;
 
-public class Mago extends Jogadores{
+public class Mago extends Players{
 	
 	public static void gerarSpec() {
 

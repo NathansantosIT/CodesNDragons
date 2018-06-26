@@ -1,7 +1,7 @@
 package Classes;
-import Codes.Jogadores;
+import Entitys.Players;
 
-public class Guerreiro extends Jogadores{
+public class Guerreiro extends Players{
 	public void mostrarAtaques(String spec) {
 		switch(spec) {
 			case "Tank":
