@@ -13,7 +13,7 @@ public class Druida extends Jogadores{
 			case "Natureza":
 				ataques[1] = "Benção da Natureza";
 				ataques[2] = "Banana";
-				ataques[3] = "";
+				ataques[3] = "TesteGit";
 				ataques[4] = "";
 				break;
 				
