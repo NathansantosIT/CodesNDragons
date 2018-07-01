@@ -2,11 +2,11 @@ package Entitys;
 
 import java.awt.Graphics;
 
-public abstract class Entity {
+public abstract class Entities {
 
 	protected float x,y;
 	
-	public Entity(float x, float y) {
+	public Entities(float x, float y) {
 		this.x = x;
 		this.y = y;
 	}

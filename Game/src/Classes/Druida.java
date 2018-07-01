@@ -1,6 +1,11 @@
 package Classes;
 import Entitys.Players;
 public class Druida extends Players{
+	public Druida(float x, float y) {
+		super(x, y);
+		// TODO Auto-generated constructor stub
+	}
+
 	public void mostrarAtaques(String spec) {
 		switch(spec) {
 			case "Lua":

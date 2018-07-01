@@ -5,6 +5,12 @@ import Entitys.Players;
 
 public class Mago extends Players{
 	
+	public Mago(float x, float y) {
+		super(x, y);
+		// TODO Auto-generated constructor stub
+	}
+
+
 	public static void gerarSpec() {
 
 		Scanner sc = new Scanner(System.in);

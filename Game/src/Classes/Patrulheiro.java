@@ -2,6 +2,10 @@ package Classes;
 import Entitys.Players;
 
 public class Patrulheiro extends Players{
+	public Patrulheiro(float x, float y) {
+		super(x, y);
+		// TODO Auto-generated constructor stub
+	}
 	public void mostrarAtaques(String spec) {
 		switch(spec) {
 			case "Domador":
