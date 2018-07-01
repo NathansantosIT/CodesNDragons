@@ -32,6 +32,7 @@ public class Game implements Runnable {
 		this.width = width;
 		this.height = height;
 		this.title = title;
+		keyManager = new KeyManager();
 	}
 	
 	//inicializa os Buffers, roda no começo do run()
@@ -46,6 +47,8 @@ public class Game implements Runnable {
 	}
 	
 	private void tick() {
+		keyManager.tick();
+		
 		if(State.getState() != null)
 			State.getState().tick();
 	}
@@ -105,6 +108,10 @@ public class Game implements Runnable {
 		
 		stop();
 	} 
+	
+	public KeyManager getKeyManager() {
+		return keyManager;
+	}
 	
 	//inicia a thread
 	public synchronized void start() {

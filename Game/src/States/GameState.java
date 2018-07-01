@@ -3,6 +3,7 @@ package States;
 import java.awt.Graphics;
 
 import Entitys.Players;
+import Tiles.Tile;
 import backEnd_game.Game;
 
 public class GameState extends State {
@@ -11,7 +12,7 @@ public class GameState extends State {
 	
 	public GameState(Game game) {
 		super(game);
-		player = new Players(480, 600);
+		player = new Players(game, 480, 600);
 	}
 	
 	public void tick() {
@@ -20,6 +21,7 @@ public class GameState extends State {
 	
 	public void render(Graphics g) {
 		player.render(g);
+		Tile.tiles[1].render(g, 0, 0);
 	}
 
 }
