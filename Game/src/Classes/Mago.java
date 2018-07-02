@@ -34,9 +34,9 @@ public class Mago extends Players{
 				
 			case "Arcano":
 				ataques[0] = "Míssil Arcano";
-				ataques[1] = "Explosão arcana";
+				ataques[1] = "Explosão Arcana";
 				ataques[2] = "Ilusão";
-				ataques[3] = "Impacto arcano";
+				ataques[3] = "Impacto Arcano";
 				break; 
 		}
 		
