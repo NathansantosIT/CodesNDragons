@@ -3,7 +3,6 @@ package worlds;
 import java.awt.Graphics;
 
 import Tiles.Tile;
-import backEnd_game.Game;
 import backEnd_game.Handler;
 import utils.Utils;
 
