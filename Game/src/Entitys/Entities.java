@@ -2,12 +2,15 @@ package Entitys;
 
 import java.awt.Graphics;
 
+import backEnd_game.Game;
+
 public abstract class Entities {
 
+	protected Game game;
 	protected float x,y;
 	protected int width, height;
 	
-	public Entities(float x, float y,int width, int height) {
+	public Entities(Game game, float x, float y,int width, int height) {
 		this.x = x;
 		this.y = y;
 		this.width = width;

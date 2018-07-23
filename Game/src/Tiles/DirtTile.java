@@ -2,7 +2,7 @@ package Tiles;
 
 import java.awt.image.BufferedImage;
 
-import grafichs.Assets;
+import graphics.Assets;
 
 public class DirtTile extends Tile{
 

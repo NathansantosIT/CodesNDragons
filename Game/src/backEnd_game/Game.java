@@ -7,12 +7,13 @@ import Inputs.KeyManager;
 import States.GameState;
 import States.State;
 import States.mainMenuState;
-import grafichs.Assets;
+import graphics.Assets;
+import graphics.GameCamera;
 
 public class Game implements Runnable {
 	
 	private Display display;
-	public int width, height;
+	private int width, height;
 	public String title;
 	
 	private boolean running = false;
@@ -28,6 +29,9 @@ public class Game implements Runnable {
 	//Input
 	private KeyManager keyManager;
 	
+	//Camera
+	private GameCamera gameCamera;
+	
 	public Game(String title, int width, int height) {
 		this.width = width;
 		this.height = height;
@@ -40,6 +44,8 @@ public class Game implements Runnable {
 		display = new Display(title, width, height);
 		display.getFrame().addKeyListener(keyManager);
 		Assets.init();
+		
+		gameCamera = new GameCamera(this, 0, 0);
 		
 		mainMenuState = new mainMenuState(this);
 		gameState = new GameState(this);
@@ -111,6 +117,16 @@ public class Game implements Runnable {
 	
 	public KeyManager getKeyManager() {
 		return keyManager;
+	}
+	public GameCamera getGameCamera() {
+		return gameCamera;
+	}
+	
+	public int getWidth() {
+		return width;
+	}
+	public int getHeight() {
+		return height;
 	}
 	
 	//inicia a thread

@@ -15,13 +15,11 @@ public class GameState extends State {
 	public GameState(Game game) {
 		super(game);
 		player = new Players(game, 480, 600);
-		world = new World("res/worlds/world1.txt");
 	}
 	
 	public void tick() {
 		world.tick();
 		player.tick();
-		
 	}
 	
 	public void render(Graphics g) {
