@@ -3,8 +3,7 @@ package States;
 import java.awt.Graphics;
 
 import Entitys.Players;
-import Tiles.Tile;
-import backEnd_game.Game;
+import backEnd_game.Handler;
 import worlds.World;
 
 public class GameState extends State {
@@ -12,9 +11,11 @@ public class GameState extends State {
 	private Players player;
 	private World world;
 	
-	public GameState(Game game) {
-		super(game);
-		player = new Players(game, 480, 600);
+	public GameState(Handler handler) {
+		super(handler);
+		world = new World(handler, "res/worlds/world1.txt");
+		handler.setWorld(world);
+		player = new Players(handler, 480, 600);
 	}
 	
 	public void tick() {

@@ -3,14 +3,16 @@ package Entitys;
 import java.awt.Graphics;
 
 import backEnd_game.Game;
+import backEnd_game.Handler;
 
 public abstract class Entities {
 
-	protected Game game;
+	protected Handler handler;
 	protected float x,y;
 	protected int width, height;
 	
-	public Entities(Game game, float x, float y,int width, int height) {
+	public Entities(Handler handler, float x, float y,int width, int height) {
+		this.handler = handler;
 		this.x = x;
 		this.y = y;
 		this.width = width;

@@ -1,6 +1,6 @@
 package Entitys;
 
-import backEnd_game.Game;
+import backEnd_game.Handler;
 
 public abstract class Creature extends Entities {
 	
@@ -15,8 +15,8 @@ public abstract class Creature extends Entities {
 	protected float speed;
 	protected float xMove, yMove;
 	
-	public Creature(Game game, float x, float y, int width, int height) {
-		super(game, x, y, width, height);
+	public Creature(Handler handler, float x, float y, int width, int height) {
+		super(handler, x, y, width, height);
 		vida = DEFAULT_HEALTH;
 		speed = DEFAULT_SPEED;
 		xMove = 0;
